@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CommaChameleon</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Roboto:wght@400;700&family=Pacifico&family=Concert+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<!-- Body class set by JS (theme, font-size) -->
+<body>
+    <!-- Background Animation Container -->
+    <div id="background-effects" aria-hidden="true">
+        <div class="cloud cloud1"></div>
+        <div class="cloud cloud2"></div>
+        <div class="cloud cloud3"></div>
+    </div>
+
+    <div class="game-container">
+
+        <div class="settings-panel">
+             <!-- Theme Selector -->
+            <fieldset class="control-group theme-selector">
+                <legend>Design</legend>
+                <button id="theme-girl" class="theme-button girl" aria-label="Wähle Mädchen-Design">Mädchen</button>
+                <button id="theme-boy" class="theme-button boy" aria-label="Wähle Jungen-Design">Jungs</button>
+                <button id="theme-contrast" class="theme-button contrast" aria-label="Wähle Hochkontrast-Design">Kontrast</button>
+            </fieldset>
+
+             <!-- Font Size Selector -->
+            <fieldset class="control-group font-size-selector">
+                 <legend>Schrift</legend>
+                 <button id="font-small" class="size-button" aria-label="Wähle kleine Schriftgröße">S</button>
+                 <button id="font-medium" class="size-button" aria-label="Wähle mittlere Schriftgröße">M</button>
+                 <button id="font-large" class="size-button" aria-label="Wähle große Schriftgröße">L</button>
+            </fieldset>
+
+            <!-- Speed Selector -->
+            <fieldset class="control-group speed-selector">
+                <legend>Tempo</legend>
+                <button id="speed-slow" class="speed-button" aria-label="Wähle langsames Tempo">Langsam</button>
+                <button id="speed-normal" class="speed-button" aria-label="Wähle normales Tempo">Normal</button>
+                <button id="speed-fast" class="speed-button" aria-label="Wähle schnelles Tempo">Schnell</button>
+            </fieldset>
+        </div>
+
+
+        <h1>CommaChameleon</h1>
+
+        <div class="score-container">
+            <div id="score-area" aria-live="polite">
+                Punkte: <strong id="score" class="score-value">0</strong>
+            </div>
+            <div id="highscore-area" aria-live="polite">
+                Rekord: <strong id="highscore" class="score-value">0</strong>
+            </div>
+        </div>
+
+        <div id="game-area">
+            <div id="story-text">
+                <!-- Initial content handled by JS -->
+            </div>
+            <div id="chameleon" aria-hidden="true"></div> <!-- Decorative -->
+            <div id="correct-effect" aria-hidden="true"></div> <!-- Decorative -->
+        </div>
+
+        <button id="start-button" aria-label="Starte das Spiel">Spiel laden...</button>
+        <div id="feedback" aria-live="polite"></div>
+
+    </div>
+
+    <footer>
+        Made with ❤️ by GA and Gemini
+    </footer>
+
+    <!-- Erfolge-Galerie -->
+    <div id="achievements-gallery" aria-label="Deine Erfolge">
+        <h2>Erfolge</h2>
+        <div class="badges-container">
+            <!-- Badge Platzhalter werden von JS gefüllt -->
+        </div>
+    </div>
+    <!-- Ende Erfolge-Galerie -->
+
+    <!-- Hidden Audio Elements -->
+    <audio id="audio-click" src="click.mp3" preload="auto"></audio>
+    <audio id="audio-correct" src="correct.mp3" preload="auto"></audio>
+    <audio id="audio-bonus" src="bonus.mp3" preload="auto"></audio>
+    <audio id="audio-appear" src="appear.mp3" preload="auto"></audio>
+    <audio id="audio-achievement" src="achievement.mp3" preload="auto"></audio> <!-- Sound für Erfolg -->
+
+    <script src="script.js"></script>
+</body>
+</html>
